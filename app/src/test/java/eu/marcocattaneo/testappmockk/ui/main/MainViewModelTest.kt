@@ -40,7 +40,7 @@ class MainViewModelTest {
         val observer = Observer<String> {}
         this.viewModel.liveData.observeForever(observer)
 
-        every { useCase.execute(any()) } answers {Single.just("testone")}
+        every { useCase.execute(any()) } answers { Single.just("testone") }
 
         this.viewModel.run(mockk())
 
